@@ -115,7 +115,8 @@ export default function Signup2() {
               <p>
                 Already have an account?{" "}
                 <span
-                  onClick={() => navigate("/login")}
+                  className={styles.link}
+                  onClick={() => navigate("/")}
                   style={{ cursor: "pointer" }}
                 >
                   LOGIN

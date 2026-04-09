@@ -5,6 +5,8 @@ import Signup from "./pages/signup/signup";
 import Signup2 from "./pages/signup/signup2";
 import OTP from "./pages/otp/otp";
 import NewPassword from "./pages/newpass/newpass";
+import Settings from "./pages/settings/settings";
+import ChangePass from "./pages/chanepass/changepass";
 
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
         <Route path="/signup2" element={<Signup2 />} />
         <Route path="/otp" element={<OTP />} />
         <Route path="/newpass" element={<NewPassword />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/changepass" element={<ChangePass />} />
       </Routes>
     </BrowserRouter>
   );

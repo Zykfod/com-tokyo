@@ -1,0 +1,249 @@
+/* ========================= */
+/* PAGE WRAPPER (replaces body) */
+/* ========================= */
+
+.page {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("/src/images/background4.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ========================= */
+/* SETTINGS CONTAINER */
+/* ========================= */
+
+.settings-container {
+  width: 600px;
+  height: 450px;
+  background: #eee;
+  border-radius: 20px;
+  display: flex;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* LEFT SIDE */
+.settingsleft {
+  width: 40%;
+  text-align: center;
+}
+
+.settingsleft h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.settingsprofile {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 5px solid gold;
+  object-fit: cover;
+}
+
+.settingslocation {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background: #ddd;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* DIVIDER */
+.settingsdivider {
+  width: 1px;
+  background: #ccc;
+  margin: 0 25px;
+}
+
+/* RIGHT SIDE */
+.settingsright {
+  top: 15px;
+  width: 60%;
+  position: relative;
+}
+
+.settingsclose {
+  position: absolute;
+  right: 0;
+  top: -30px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #2d6cdf;
+}
+
+.settings-label {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.settings-input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px;
+  border: none;
+  border-radius: 8px;
+  background: #ddd;
+}
+
+.settings-input[readonly] {
+  background: #e6e6e6;
+  cursor: not-allowed;
+}
+
+.settingschange {
+  background: #2d6cdf;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+
+  position: absolute;
+  bottom: 20px;
+  right: -10px;
+}
+
+/* ========================= */
+/* CHANGE PASSWORD (UNCHANGED) */
+/* ========================= */
+
+.changepass-container {
+  width: 600px;
+  height: 450px;
+  background: #eee;
+  border-radius: 20px;
+  display: flex;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.changepassleft {
+  width: 40%;
+  text-align: center;
+}
+
+.changepassleft h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.changepassprofile {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 5px solid gold;
+  object-fit: cover;
+}
+
+.changepasslocation {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background: #ddd;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.changepassdivider {
+  width: 1px;
+  background: #ccc;
+  margin: 0 25px;
+}
+
+.changepassright {
+  top: 15px;
+  width: 60%;
+  position: relative;
+}
+
+.changepassclose {
+  position: absolute;
+  right: 0;
+  top: -30px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #2d6cdf;
+}
+
+.changepass-label {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.changepass-input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px;
+  border: none;
+  border-radius: 8px;
+  background: #ddd;
+}
+
+.changepassupdate {
+  background: #2d6cdf;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+
+  position: absolute;
+  bottom: 20px;
+  right: -10px;
+}
+
+/* PASSWORD */
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  width: 91%;
+  padding: 10px 40px 10px 10px;
+  border: none;
+  border-radius: 8px;
+  background: #ddd;
+}
+
+.toggle-password {
+  position: absolute;
+  right: -2px;
+  top: 40%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #333;
+  font-size: 16px;
+}
+
+/* OTP (UNCHANGED) */
+.otp-Form {
+  width: 230px;
+  height: 300px;
+  background-color: #fff;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px;
+  gap: 20px;
+  position: fixed;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.082);
+  border-radius: 15px;
+}
+
+/* BLUR */
+.blur-background {
+  filter: blur(15px);
+  pointer-events: none;
+  user-select: none;
+}

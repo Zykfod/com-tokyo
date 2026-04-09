@@ -113,7 +113,7 @@ export default function Signup() { // ✅ FIXED component name (capitalized)
             <div className={styles.switchh}>
               <p>
                 Already have an account?
-                <span onClick={() => navigate("/")}> LOGIN</span> {/* ✅ FIXED route */}
+                <span onClick={() => navigate("/")} className={styles.link}> LOGIN</span> {/* ✅ FIXED route */}
               </p>
             </div>
 
