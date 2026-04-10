@@ -7,6 +7,7 @@ import OTP from "./pages/otp/otp";
 import NewPassword from "./pages/newpass/newpass";
 import Settings from "./pages/settings/settings";
 import ChangePass from "./pages/chanepass/changepass";
+import Masterlist from "./pages/masterlist/masterlist";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/newpass" element={<NewPassword />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/changepass" element={<ChangePass />} />
+        <Route path="/ml" element={<Masterlist />} />
       </Routes>
     </BrowserRouter>
   );

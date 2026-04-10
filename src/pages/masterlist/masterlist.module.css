@@ -1,0 +1,254 @@
+/* PAGE BACKGROUND (REPLACES BODY) */
+.page {
+  margin: 0;
+  font-family: Segoe UI, sans-serif;
+  background: url('masterlistbg.png') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1vh 5vw;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+
+  background: rgba(255, 255, 255, 0.101);
+  border-radius: 0.3vw;
+  box-shadow: 0 1vh 0.5vw rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(0.5vw);
+  -webkit-backdrop-filter: blur(0.5vw);
+}
+
+/* TITLE */
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #000000;
+  font-family: "Alfa Slab One", serif;
+  padding: 2vh 4vw 1vh 7.8vw;
+}
+
+/* LOGO */
+.logo-img {
+  position: absolute;
+  top: -0.7vh;
+  left: 3.6vw;
+  width: 5.2vw;
+}
+
+/* NAVBAR */
+.navbar {
+  margin-right: 4.7vw;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+  font-family: "Alfa Slab One", serif;
+}
+
+.navbar ul li {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+/* NAV HOVER UNDERLINE */
+.navbar ul li::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  height: 2px;
+  width: 0%;
+  left: 0;
+  bottom: 0;
+  transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+  width: 100%;
+}
+
+/* LINKS */
+.navbar a {
+  text-decoration: none;
+  color: black;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: black;
+  padding: 6px;
+  font-size: 1rem;
+  font-family: "Alfa Slab One", serif;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+/* DROPDOWN UNDERLINE */
+.dropbtn::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  height: 2px;
+  width: 0%;
+  left: 0;
+  bottom: 0;
+  transition: 0.5s;
+}
+
+.dropbtn:hover::after {
+  width: 100%;
+}
+
+/* DROPDOWN CONTENT */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  z-index: 1;
+
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #141937;
+  color: white;
+}
+
+/* SHOW DROPDOWN */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  top: 86px;
+  padding: 10px 40px;
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+
+/* ACTIVE TAB */
+.active {
+  border-bottom: 3px solid black;
+}
+
+/* SEARCH */
+.search-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 38px;
+}
+
+.search-bar input {
+  margin-top: 80px;
+  width: 250px;
+  padding: 8px;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+}
+
+/* CONTAINER */
+.container {
+  background: #ffffff;
+  margin: 20px 40px;
+  padding: 20px;
+  border-radius: 15px;
+  height: 52vh;
+  overflow-y: auto;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+  padding: 10px;
+  font-size: 14px;
+}
+
+tbody td {
+  padding: 10px;
+  border-top: 1px solid #bbb;
+  font-size: 14px;
+}
+
+/* ALIGN LAST COLUMN */
+th:last-child,
+td:last-child {
+  text-align: right;
+  width: 150px;
+}
+
+/* ACTION BUTTONS */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.actions button {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* APPROVE */
+.approve {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* REJECT */
+.reject {
+  background-color: #f44336;
+  color: white;
+}
+
+/* HOVER EFFECT */
+.actions button:hover {
+  opacity: 0.8;
+}

@@ -194,7 +194,7 @@ export default function ChangePass() {
 
           {/* ERROR */}
           {error && (
-            <p style={{ color: "red", fontSize: "13px" }}>{error}</p>
+            <p style={{ color: "red", fontSize: "10px" , fontWeight:"600"}}>{error}</p>
           )}
 
           {/* BUTTON */}
