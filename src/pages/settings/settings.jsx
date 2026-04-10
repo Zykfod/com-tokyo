@@ -16,10 +16,10 @@ export default function Settings() {
   // LOAD DATA
   // ======================
   useEffect(() => {
-    const storedName = localStorage.getItem("userFullname") || "";
-    const storedEmail = localStorage.getItem("userEmail") || "";
-    const storedAddress = localStorage.getItem("userAddress") || "";
-    const storedCity = localStorage.getItem("userCity") || "";
+    const storedName = localStorage.getItem("userFullname") || "jasmine"; // sample name here to display "plz remove the jasmine later on"
+    const storedEmail = localStorage.getItem("userEmail") || "jasmine@sunlife.com.ph"; // sample email here to display "plz remove the jasmine@sunlife.com.ph later on"
+    const storedAddress = localStorage.getItem("userAddress") || "Teniment"; // sample address here to display "plz remove the teniment later on"
+    const storedCity = localStorage.getItem("userCity") || "Taguig"; // sample city here to display "plz remove the Taguig later on"
 
     setName(storedName);
     setEmail(storedEmail);

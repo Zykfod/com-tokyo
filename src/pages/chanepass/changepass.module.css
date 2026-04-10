@@ -191,6 +191,7 @@
 
 .changepass-error{
   font-size:12px;
+
 }
 
 /* =========================
@@ -201,7 +202,10 @@
   height: 320px;
   background: white;
 
-  display: none;
+  /* ❌ REMOVE THIS */
+  /* display: none; */
+
+  display: flex; /* ✅ always visible when rendered */
   flex-direction: column;
   align-items: center;
   justify-content: center;

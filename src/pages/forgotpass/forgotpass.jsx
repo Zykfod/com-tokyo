@@ -22,47 +22,56 @@ export default function ForgotPassword() {
 
     // go to OTP page
     navigate("/otp");
-    //something wrong
   };
 
   return (
-    <div className={`${styles.background} ${styles.forgotPasswordPage}`}>
-  <div className={styles.card}>
+    <div className={styles.background + " forgot-password-page"}> 
+      <div className={styles.card}>
 
-    <h1 className={styles.title}>Forgot Password</h1>
+        {/* TITLE (uses global h1 + .forgot-password-page h1 in CSS) */}
+        <h1>Forgot Password</h1>
 
-    <p className={styles.subtitle}>
-      Enter your email to receive a verification code
-    </p>
+        {/* SUBTITLE */}
+        <p className={styles.subtitle}>
+          Enter your email to receive a verification code
+        </p>
 
-    <form onSubmit={handleSubmit}>
-      <div className={styles.inputGroup}>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder=" "
-          required
-        />
+        {/* FORM */}
+        <form onSubmit={handleSubmit}>
+          <div className={styles.inputGroup}>
+            <input
+            className={styles.input}
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder=" "
+              required
+            />
 
-        <label>Email</label>
+            <label className={styles.input}>Email</label>
 
-        <i className={`fa-solid fa-envelope ${styles.inputIcon}`}></i>
+            {/* Font Awesome icon (uses your .input-icon CSS) */}
+            <i className={`fa-solid fa-envelope ${styles.inputIcon}`}></i>
+          </div>
+
+          {/* BUTTON (uses .btn1 absolute styling from your CSS) */}
+          <button type="submit" className={styles.btn1}>
+            Send Code
+          </button>
+        </form>
+
+        {/* SWITCH TEXT (matches .switch in your CSS) */}
+        <p className={styles.switch}>
+          Remember your password?{" "}
+          <span
+            className={styles.link}
+            onClick={() => navigate("/")}
+          >
+            LOGIN
+          </span>
+        </p>
+
       </div>
-
-      <button type="submit" className={styles.button}>
-        Send Code
-      </button>
-    </form>
-
-    <p className={styles.switch}>
-      Remember your password?{" "}
-      <span className={styles.link} onClick={() => navigate("/")}>
-        LOGIN
-      </span>
-    </p>
-
-  </div>
-</div>
+    </div>
   );
 }

@@ -19,7 +19,7 @@ export default function ChangePass() {
 
   const otpRefs = useRef([]);
 
-  const storedPassword = "OldPass123";
+  const storedPassword = "123";
 
   // ======================
   // PASSWORD RULES
