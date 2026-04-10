@@ -66,7 +66,10 @@
   padding: 0 6px;
   border-radius: 5px;
 }
+.inputGroup input:focus {
 
+  outline: none; /* removes default browser outline */
+}
 /* TOGGLE */
 .togglePassword {
   position: absolute;
