@@ -256,11 +256,7 @@ h1 {
 }
 
 button {
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-  color: black;
-  background: #257cff;
+ 
 }
 
 button:hover {
@@ -431,7 +427,7 @@ button:hover {
 /* ================================================= */
 
 .modal {
-  display: none;
+  display: flex;
   position: fixed;
   inset: 0;
 
@@ -445,8 +441,8 @@ button:hover {
 
 .modal-box {
   width: 900px;
-  max-width: 90%;
-  padding: 60px 40px;
+  max-width: 45%;
+  padding: 40px 40px;
   text-align: center;
   background: rgba(255, 255, 255, 0.58);
   border-radius: 20px;
@@ -458,7 +454,7 @@ button:hover {
 
 .modal-box h2 {
   font-family: 'Bevan', cursive;
-  font-size: 40px;
+  font-size: 25px;
   margin-bottom: 10px;
 }
 
@@ -469,13 +465,15 @@ button:hover {
 }
 
 .modal-box button {
-  position: static;
+  position: relative;
   width: 220px;
   height: 55px;
   border-radius: 10px;
   font-size: 20px;
-  margin-left: 200px;
+  left: 10px;
+  bottom:1px;
 }
+
 
 /* ================================================= */
 /* RESPONSIVE ADJUSTMENTS */

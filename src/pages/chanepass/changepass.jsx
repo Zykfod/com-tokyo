@@ -197,7 +197,7 @@ export default function ChangePass() {
             </span>
           </div>
 
-          {error && <p style={{ color: "red", fontSize: "12px" }}>{error}</p>}
+          {error && <p style={{ color: "red", fontSize: "10px", fontWeight: "500",}}>{error}</p>}
 
           <button className={styles["changepassupdate"]} onClick={handleUpdate}>
             UPDATE PASSWORD
@@ -224,7 +224,7 @@ export default function ChangePass() {
             We have sent a verification code to your mobile number
           </p>
 
-          <p style={{ fontSize: "12px", color: "red" }}>
+          <p style={{ color: "red" }}>
             {timeLeft > 0 ? formatTime() : "Code expired"}
           </p>
 

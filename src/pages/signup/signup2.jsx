@@ -39,7 +39,7 @@ export default function Signup2() {
   // ======================
   const handleContinue = () => {
     setShowModal(false);
-    navigate("/login"); // change if needed
+    navigate("/"); // change if needed
   };
 
   return (
@@ -125,7 +125,7 @@ export default function Signup2() {
             </div>
 
             {/* SUBMIT BUTTON */}
-            <button type="submit">
+            <button type="submit" className={styles.signup2btn}>
               Create Account
             </button>
 
@@ -137,11 +137,12 @@ export default function Signup2() {
       {showModal && (
         <div className={styles.modal}>
           <div className={styles["modal-box"]}>
-            <h2>Congratulations! Account Successfully Created!</h2>
+            <h2>Congratulations!</h2>
+            <h2> Account Successfully Created!</h2>
             <p>
               Your account is being processed, Kindly wait for the confirmation.
             </p>
-            <button onClick={handleContinue}>
+            <button onClick={handleContinue} className={styles.continueBtn}>
               Continue
             </button>
           </div>
