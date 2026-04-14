@@ -60,12 +60,12 @@ export default function Settings() {
 
         {/* RIGHT SIDE */}
         <div className={styles.settingsright}>
-          <button
+          <span
             className={styles.settingsclose}
             onClick={() => navigate("/landing")}
           >
-            <i className="fa-solid fa-xmark"></i>
-          </button>
+             <i className="fa-solid fa-xmark"></i>
+          </span>
 
           <label className={styles["settings-label"]}>Full Name</label>
           <input

@@ -117,7 +117,7 @@ export default function Signup() { // ✅ FIXED component name (capitalized)
               </p>
             </div>
 
-            <button type="submit" >Next</button>
+            <button type="submit"  className={styles["signup-button"]}>Next</button>
 
           </form>
         </div>

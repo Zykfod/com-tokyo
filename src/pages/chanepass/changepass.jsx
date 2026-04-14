@@ -4,12 +4,14 @@ import profileImg from "../../images/profile1.jpg";
 import bgImg from "../../images/background4.jpg";
 
 export default function ChangePass() {
-  // ======================
   // STATES
-  // ======================
   const [currentPass, setCurrentPass] = useState("");
   const [newPass, setNewPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
+
+  const [showCurrentPass, setShowCurrentPass] = useState(false);
+  const [showNewPass, setShowNewPass] = useState(false);
+  const [showConfirmPass, setShowConfirmPass] = useState(false);
 
   const [showOtp, setShowOtp] = useState(false);
   const [error, setError] = useState("");
@@ -21,9 +23,7 @@ export default function ChangePass() {
 
   const storedPassword = "123";
 
-  // ======================
   // PASSWORD RULES
-  // ======================
   const rules = {
     length: newPass.length >= 8,
     uppercase: /[a-z]/.test(newPass) && /[A-Z]/.test(newPass),
@@ -31,9 +31,7 @@ export default function ChangePass() {
     special: /[!@#$%^&*(),.?":{}|<>]/.test(newPass),
   };
 
-  // ======================
   // OTP TIMER
-  // ======================
   useEffect(() => {
     if (!showOtp) return;
 
@@ -58,9 +56,7 @@ export default function ChangePass() {
     return `${m}:${s < 10 ? "0" : ""}${s}`;
   };
 
-  // ======================
   // VALIDATION
-  // ======================
   const handleUpdate = (e) => {
     e.preventDefault();
     setError("");
@@ -88,9 +84,7 @@ export default function ChangePass() {
     setShowOtp(true);
   };
 
-  // ======================
-  // OTP HANDLERS
-  // ======================
+  // OTP INPUT
   const handleOtpChange = (value, index) => {
     if (!/^[0-9]?$/.test(value)) return;
 
@@ -109,19 +103,21 @@ export default function ChangePass() {
     }
   };
 
-  // ======================
-  // UI
-  // ======================
+  // 🔥 RESEND FUNCTION
+  const handleResend = () => {
+    setOtp(["", "", "", ""]);
+    setTimeLeft(300);
+    otpRefs.current[0]?.focus();
+    console.log("OTP resent!");
+  };
+
   return (
     <div
-      className={`${styles.page} ${showOtp ? styles["blur-background"] : ""}`}
-      style={{
-        backgroundImage: `url(${bgImg})`,
-      }}
+      className={styles.page}
+      style={{ backgroundImage: `url(${bgImg})` }}
     >
       {/* MAIN CARD */}
       <div className={styles["changepass-container"]}>
-        {/* LEFT */}
         <div className={styles["changepassleft"]}>
           <h2>ACCOUNT SETTINGS</h2>
           <img src={profileImg} className={styles["changepassprofile"]} />
@@ -130,86 +126,98 @@ export default function ChangePass() {
 
         <div className={styles["changepassdivider"]} />
 
-        {/* RIGHT */}
         <div className={styles["changepassright"]}>
-          <a href="#" className={styles["changepassclose"]}>
+          <button
+            type="button"
+            className={styles["changepassclose"]}
+            onClick={() => setShowOtp(false)}
+          >
             <i className="fa-solid fa-xmark"></i>
-          </a>
+          </button>
 
           {/* CURRENT */}
-          <label className={styles["changepass-label"]}>
-            Current Password
-          </label>
+          <label className={styles["changepass-label"]}>Current Password</label>
           <div className={styles["password-wrapper"]}>
             <input
-              type="password"
+              type={showCurrentPass ? "text" : "password"}
               value={currentPass}
               onChange={(e) => setCurrentPass(e.target.value)}
               className={styles["changepass-input"]}
             />
+            <span
+              className={styles.eyeIcon}
+              onClick={() => setShowCurrentPass((prev) => !prev)}
+            >
+              <i className={`fa-solid ${showCurrentPass ? "fa-eye-slash" : "fa-eye"}`}></i>
+            </span>
           </div>
 
           {/* NEW */}
           <label className={styles["changepass-label"]}>New Password</label>
           <div className={styles["password-wrapper"]}>
             <input
-              type="password"
+              type={showNewPass ? "text" : "password"}
               value={newPass}
               onChange={(e) => setNewPass(e.target.value)}
               className={styles["changepass-input"]}
             />
+            <span
+              className={styles.eyeIcon}
+              onClick={() => setShowNewPass((prev) => !prev)}
+            >
+              <i className={`fa-solid ${showNewPass ? "fa-eye-slash" : "fa-eye"}`}></i>
+            </span>
           </div>
 
           {/* RULES */}
           <div className={styles["password-rules"]}>
-            <p className={styles.passwordRuleTitle}>
-              Password must contain:
-            </p>
+            <p className={styles.passwordRuleTitle}>Password must contain:</p>
             <ul>
-              <li className={rules.length ? styles.valid : ""}>
-                At least 8 characters
-              </li>
-              <li className={rules.uppercase ? styles.valid : ""}>
-                Upper & Lowercase
-              </li>
-              <li className={rules.number ? styles.valid : ""}>
-                One number
-              </li>
-              <li className={rules.special ? styles.valid : ""}>
-                One special character
-              </li>
+              <li className={rules.length ? styles.valid : ""}>At least 8 characters</li>
+              <li className={rules.uppercase ? styles.valid : ""}>Upper & Lowercase</li>
+              <li className={rules.number ? styles.valid : ""}>One number</li>
+              <li className={rules.special ? styles.valid : ""}>One special character</li>
             </ul>
           </div>
 
           {/* CONFIRM */}
-          <label className={styles["changepass-label"]}>
-            Confirm New Password
-          </label>
-          <input
-            type="password"
-            value={confirmPass}
-            onChange={(e) => setConfirmPass(e.target.value)}
-            className={styles["changepass-input"]}
-          />
+          <label className={styles["changepass-label"]}>Confirm New Password</label>
+          <div className={styles["password-wrapper"]}>
+            <input
+              type={showConfirmPass ? "text" : "password"}
+              value={confirmPass}
+              onChange={(e) => setConfirmPass(e.target.value)}
+              className={styles["changepass-input"]}
+            />
+            <span
+              className={styles.eyeIcon}
+              onClick={() => setShowConfirmPass((prev) => !prev)}
+            >
+              <i className={`fa-solid ${showConfirmPass ? "fa-eye-slash" : "fa-eye"}`}></i>
+            </span>
+          </div>
 
-          {/* ERROR */}
-          {error && (
-            <p style={{ color: "red", fontSize: "10px" , fontWeight:"600"}}>{error}</p>
-          )}
+          {error && <p style={{ color: "red", fontSize: "12px" }}>{error}</p>}
 
-          {/* BUTTON */}
-          <button
-            className={styles["changepassupdate"]}
-            onClick={handleUpdate}
-          >
+          <button className={styles["changepassupdate"]} onClick={handleUpdate}>
             UPDATE PASSWORD
           </button>
         </div>
       </div>
 
-      {/* OTP MODAL */}
+      {/* 🔥 BLUR OVERLAY */}
+      {showOtp && <div className={styles.overlay}></div>}
+
+      {/* 🔥 OTP MODAL */}
       {showOtp && (
         <form className={styles["otp-Form"]}>
+          <button
+            type="button"
+            className={styles.exitBtn}
+            onClick={() => setShowOtp(false)}
+          >
+            ×
+          </button>
           <span className={styles.mainHeading}>Enter OTP</span>
 
           <p className={styles.otpSubheading}>
@@ -217,7 +225,7 @@ export default function ChangePass() {
           </p>
 
           <p style={{ fontSize: "12px", color: "red" }}>
-            {formatTime()}
+            {timeLeft > 0 ? formatTime() : "Code expired"}
           </p>
 
           <div className={styles.inputContainer}>
@@ -234,21 +242,16 @@ export default function ChangePass() {
             ))}
           </div>
 
-          <button className={styles.verifyButton}>
-            Verify
-          </button>
-
-          <button
-            type="button"
-            className={styles.exitBtn}
-            onClick={() => setShowOtp(false)}
-          >
-            ×
-          </button>
+          <button className={styles.verifyButton}>Verify</button>
 
           <p className={styles.resendNote}>
             Didn't receive the code?
-            <button type="button" className={styles.resendBtn}>
+            <button
+              type="button"
+              className={styles.resendBtn}
+              onClick={handleResend}
+              disabled={timeLeft > 0}
+            >
               Resend Code
             </button>
           </p>
